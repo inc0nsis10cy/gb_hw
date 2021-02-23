@@ -210,7 +210,7 @@ body{
 }
 
 /* Гамбургер-меню */
-/* TO-DO!!!! Как убирать меню при клике на любую область страницы???? */
+/* TO-DO!!!! Как закрыть меню при клике на любую область страницы???? */
 .brand_overlay{
     position: absolute;
     width: 100%;
@@ -263,7 +263,6 @@ body{
     text-decoration: none;
     color: #6F6E6E;
     line-height: 30px;
-    
 }
 
 /*Блок предложений Offers */
@@ -339,6 +338,7 @@ body{
 }
 
 /* Блок Featured Items */
+
 .featured_items{
     margin-top: 96px;
 }
@@ -604,6 +604,7 @@ body{
         padding-bottom: 110px;
     }
 }
+
 .subscribe_left{
     display: flex;
     flex-direction: column;
@@ -640,6 +641,7 @@ body{
             line-height: 22px;
     }
 }
+
 .subscribe_right{
     display: flex;
     flex-direction: column;
@@ -661,7 +663,6 @@ body{
     font-size: 18px;
     line-height: 29px;
 }
-
 @media (max-width: 500px){
     .subscrible_title {
         margin-bottom: 22px;
@@ -673,6 +674,7 @@ body{
         margin-bottom: 22px;
     }
 }
+
 .subscribe_form{
     display: flex;
     height: 49px;
@@ -683,6 +685,7 @@ body{
         height: 46.94px;
     }
 }
+
 /* TO-DO!!!! Задать формат ввода pattern*/
 .input_email{
     height: inherit;
@@ -698,14 +701,11 @@ body{
     font-family: inherit;
     border: none;
     width: 256px;
-    
-    
 }
 @media (max-width: 500px){
     .input_email{
         width: 75%;
     }
-
 }
 .subscribe_button{
     font-size: 14px;
