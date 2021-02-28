@@ -1,0 +1,983 @@
+/* font Lato */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap');
+
+body{
+    margin: 0;
+    font-family: Lato, sans-serif;
+}
+
+.container{
+    margin: 0 auto;
+    max-width: 1140px;  
+    
+    @media (max-width: 500px) { /*TO-DO!!!!!!
+Контейнер не принимает значения медиазапроса при ширине экрана менее 500px, оставляет падинги от запроса для 1200px*/
+
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+     /* @media (max-width: 1200px) такой вариант не срабатывает, пришлось писать везде полный диапазон, как ниже{ */
+        @media (min-width: 500px) and (max-width: 1200px) {
+        padding-left: 32px;
+        padding-right: 32px;
+    }
+}
+
+.wrapper{
+    height: 100vh;
+    display: flex;
+    flex-direction: column; 
+}
+
+/* Text related */
+.text{
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+}
+
+.hidden{
+    display: none;
+}
+
+
+/* Header */
+.header{
+    background-color: #222222;
+    height: 75px; 
+    width: 100%; 
+    padding-top: 18px;
+    padding-bottom: 18px;
+    box-sizing: border-box;
+    
+    @media (max-width: 767px) {
+        height: 74px;
+    }
+}
+
+ .header .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+ 
+    .logo_icon   {
+        margin-right: 41px;
+    }
+    .menu_icon:hover{
+        height: 25px;
+    }
+    .profile_icon{
+        margin-left: 33px;
+        margin-right: 34px;
+        
+        @media (max-width: 1599px) {
+        margin-left: 25px;
+        margin-right: 42px;
+        }
+    }
+    @media (max-width: 767px) {
+        .profile_icon, 
+        .cart_check {
+            display: none;
+        }
+    }
+
+    .cart_check{
+        position: relative;
+    }
+    .cart_check span{
+        display: inline-block;
+        position: absolute;
+        color: #FFFFFF;
+        height: 19px;
+        width: 19px;
+        background-color: #F16D7F;
+        border-radius: 50%;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 18px;
+        text-align: center;
+        right: -8px;
+        top: -19px;
+    }
+}
+
+/* Content */
+/* Styles for Brand Block */
+.brand_block{
+    position: relative;
+
+    .brand_wrap{
+        display: flex;
+        justify-content: center;
+        min-height: 764px;
+        width: 100%;
+        color: #222222;
+
+        @media (max-width: 767px) {
+            min-height: 343px;
+            align-items: center;
+        }
+        @media (max-width: 1599px) {
+            min-height: 367.57px;
+        }
+    }
+    .brand_wrap > div{
+        width: 50%;
+    }
+
+    .brand_cover_pic{
+        width: 100%;
+        display: block;
+    }
+    .brand_block_left{
+        min-height: inherit;
+        /* width: 50%;  - указан через родителя*/
+
+        @media (max-width: 767px) {   
+            display: none;
+        }
+    }
+    .brand_block_right{
+        background-color: #F1E4E6;
+        display: flex;
+        align-items: center;
+        /* width: 50%  - указан через родителя*/
+
+        @media (max-width: 767px) {   
+                width: 100%;
+                flex-grow: 1;
+                min-height: inherit;
+        }
+    }
+
+    .brand_logo{
+        border-left: 12px solid #F16D7F;
+        padding-left: 16px;
+        margin-left: 64px;
+        height: 93.1px;
+
+        @media (max-width: 767px) {
+                margin: 0 auto;
+                height: 66px;
+        }
+        @media (min-width: 768px) and (max-width: 1599px) {
+                margin-left: 41px;
+                height: 78px;
+        }
+    }
+
+    .brand_logo div:first-child {
+        font-size: 48px;
+        line-height: 44px;
+        font-weight: 900;
+    
+        @media (max-width: 767px) {
+            font-size: 38px;
+            line-height: 31px;
+            font-weight: 700;
+        }
+        @media (min-width: 768px) and (max-width: 1599px) {
+            font-size: 44px;
+            line-height: 39px;
+            font-weight: 700;
+        }
+    }
+    .brand_logo div:last-child {
+        font-weight: 700;
+        font-size: 32px;
+        line-height: 62px;
+
+        @media (max-width: 767px) {
+            font-size: 20px;
+            line-height: 48px;
+        } 
+        @media (min-width: 768px) and (max-width: 1599px) {
+            font-size: 24px;
+            line-height: 53px;
+        } 
+    }
+
+    .brand_logo span{
+        color: #F16D7F;
+    }
+}
+
+/* Гамбургер-меню */
+
+.brand_overlay{ /*Затемнение блока Brand при вызове меню*/
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    right: 0;
+    top: 0;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.menu{
+    background: #FFFFFF;
+    box-shadow: 6px 4px 35px rgba(0, 0, 0, 0.21);
+    width: 232px;
+    height: inherit;
+    margin-left: auto;
+    padding: 37px 34px;
+    box-sizing: border-box;
+    position: absolute;
+    overflow: auto;
+    z-index: 1;
+    right: 0;
+    
+    @media (max-width: 500px){
+        width: 80%;
+        height: 100vh;
+        z-index: 1;
+    }
+    .cancel_menu{
+        position: absolute;
+        right: 16px;
+        top: 16px;
+    }
+    .cancel_menu:hover{
+        height: 16px;
+    }
+    .menu_heading{
+        font-weight: 700;
+        margin-bottom: 24px;
+    }
+    .menu_group{
+        padding-bottom: 20px;
+    }
+    .menu_items_title{
+        color: #F16D7F;
+    }
+    .menu_items{
+        list-style-type: none;
+        padding-left: 21px;
+    }
+    .menu_items a{
+        text-decoration: none;
+        color: #6F6E6E;
+        line-height: 30px;
+    }
+}
+
+
+/*Блок предложений Offers */
+.offers{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 260px 180px;
+    row-gap: 32px;
+    column-gap: 30px;
+    margin-top: 64px;
+
+    @media (max-width: 550px){
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(3, 247px) 111px;
+    }
+    @media (min-width: 550px) and (max-width: 1200px){
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: minmax(167px, 260px) minmax(116px, 180px);
+            gap: 20px;
+    }
+    .heading_offers{
+        position: relative;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    
+    }
+    .heading_line1{
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 19px;
+        text-align: center;
+        color: #FFFFFF;
+    }
+    .heading_line2{
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 29px;
+        text-align: center;
+        color: #F16D7F;
+    }
+}
+// Многое ломается при вложенности, приходится выносить отдельно
+.offers > div{
+    position: relative;
+}
+.offer_pic{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+
+    @media (max-width: 767px){
+        width: 100%;
+    }
+}
+.offer_accessories{
+        grid-column: 1/-1;
+}
+.long_pic{
+    padding-bottom: 0;
+    min-height: 111px;
+}
+
+
+/* Стили для блока Featured Items */
+
+.featuredItems{
+    margin-top: 96px;
+
+    @media (max-width: 500px){
+            margin-top: 64px;
+            padding-left: 8px;
+            padding-right: 8px;
+    }
+    @media (min-width: 500px) and (max-width: 1200px){
+            margin-top: 154px;
+            padding-left: 16px;
+            padding-right: 16px;
+    }
+    .featuredItems__heading{
+        font-size: 30px;
+        line-height: 36px;
+        font-weight: 400;
+        color: #222222;
+        margin-bottom: 6px;
+        text-align: center;
+
+        @media (max-width: 1599px){
+            margin-bottom: 3.3px;
+        }
+    }
+    .featuredItems__text{
+        text-align: center;
+        color: #9F9F9F;
+    }
+}
+
+.capsules_positioning{
+    margin-top: 48px;
+
+    @media (max-width: 500px){
+        margin-top: 64.7px;
+    }
+    @media (min-width: 500px) and (max-width: 1200px){
+        margin-top: 73px;
+    }
+}
+.capsules{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+
+    @media (max-width: 500px){
+            grid-template-columns: 1fr;
+            gap: 16px;
+    }
+    @media (min-width: 500px) and (max-width: 1200px){
+        grid-template-columns: 1fr 1fr;
+        column-gap: 16px;
+        row-gap: 18px;
+    }  
+
+    
+    .capsule:hover .capsule_pic_dark_overlay{
+        display: flex;
+    }
+    .capsule_pic{
+        width: 100%;
+        position: relative;
+        display: block;
+    }
+    /* Кнопка  корзины при наведении на товар */
+    .capsule_pic_wrap{
+        display: flex;
+        position: relative;
+
+        .capsule_pic_dark_overlay{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: rgba(58, 56, 56, 0.86);
+            display: none;
+            align-items: center;
+            justify-content: center;
+        }
+        .tap_button{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            position:absolute;
+            border: 1px solid #FFFFFF;
+            padding: 10px 14px;
+        }
+        .tap_button img{
+            height: 24px;
+            margin-right: 11px;
+        }
+        .tap_button_text{
+            color: #FFFFFF;
+            font-family: inherit;
+        }
+    }
+    /* Конец кнопки */
+
+    .capsule_description{
+        padding: 24px 16px 20px;
+        text-align: left;
+        background: #F8F8F8;
+        .capsule_title{
+            font-size: 13px;
+            line-height: 16px;
+            color: #000000;
+        }
+        .capsule_text{
+            color: #5D5D5D;
+            padding-top: 12.65px;
+            padding-bottom: 18px;
+            font-weight: 300;
+        }
+        .capsule_price{
+            color: #F16D7F;
+        }
+    }
+}
+
+
+.browse_button{
+    font-size: 16px;
+    line-height: 19px;
+    font-weight: 400;
+    color: #F26376;
+    padding: 15px 39px;
+    display: block;
+    border: 1px solid #FF6A6A;
+    margin-top: 48px;
+    margin-left: auto;
+    margin-right: auto;
+    background: none;
+    font-family: inherit;
+}
+
+.browse_button:hover{
+    background: #F16D7F;
+    color: #FFFFFF;
+    }
+
+
+/* Styles for Advantages block */
+.advantages_block{
+    margin-top: 95px;
+    background: #222224;
+    padding-top: 104px;
+    padding-bottom: 104px;
+    
+    @media (max-width: 500px){
+            padding-top: 48px;
+            padding-bottom: 81px;
+        }
+
+    @media (min-width: 500px) and (max-width: 1200px){
+            margin-top: 64px;
+            padding-top: 48px;
+            padding-bottom: 64px;
+    }
+}
+.advantages_block .container{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    @media (max-width: 500px){
+            justify-content: center;
+    }
+    @media (min-width: 500px) and (max-width: 1200px){
+            justify-content: center;
+    }
+
+    .advantage_wrap{
+        display: flex;
+        justify-content: space-between;
+
+        @media (max-width: 500px){
+            flex-direction: column;
+        }
+
+        @media (min-width: 500px) and (max-width: 1200px){
+            flex-direction: column;
+        }
+
+        .advantage{
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            align-items: center;
+            max-width: 360px;
+
+            @media (max-width: 500px){
+                width: 100%;
+                padding-bottom: 47px;
+                max-width: 348px;
+            }
+            
+            @media (min-width: 500px) and (max-width: 1200px){
+                padding-bottom: 48px;   
+            }
+        }
+
+        .advantage img{
+            height: 33px;
+            width: 33px;
+        }
+        .adv_title{
+            font-size: 19.96px;
+            line-height: 24px;
+            color: #FBFBFB;
+            margin-top: 20px;
+            margin-bottom: 15px;
+        
+            @media (max-width: 500px){
+                margin-top: 27px;
+                margin-bottom: 15px;
+            }
+        }
+
+        .adv_text{
+            font-weight: 300;
+            text-align: center;
+            color: #FBFBFB;
+        }
+    }
+}
+
+/* Styles for Subscribe block */
+
+.subscribe_block{
+    background: url(../img/subscribe_bg.jpg) no-repeat;;
+    background-size: cover;
+
+    .subscribe{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 96px;
+        padding-bottom: 126px;
+        box-sizing: border-box;
+        
+    }
+    @media (max-width: 500px){
+        .subscribe{
+        flex-direction: column;
+        padding-top: 64px;
+        padding-bottom: 140px;
+        }
+    }
+    @media (min-width: 500px) and (max-width: 1100px){
+        .subscribe{
+            flex-direction: column;
+            min-height: 614px;
+            padding-top: 64px;
+            padding-bottom: 110px;
+        }
+    }
+
+    .subscribe_left{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        max-width: 360px;
+    }
+    @media (max-width: 500px){
+        .subscribe_left{
+            padding-bottom: 48px;
+            max-width: 343px;
+            justify-content: center;
+            
+        }
+    }
+    @media (min-width: 500px) and (max-width: 1200px){
+        .subscribe_left{
+            margin-bottom: 48px;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+    .subscribe_text{
+        font-size: 20px;
+        line-height: 24px;
+        text-align: center;
+        color: #222224;
+        max-width: 330px;
+    }
+    @media (max-width: 500px){
+        .subscribe_text{
+                font-size: 18px;
+                line-height: 22px;
+        }
+    }
+
+    .subscribe_right{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        color: #222224;
+        max-width: 356px;
+    }
+    .subscrible_title{
+        display: flex;
+        flex-direction: column;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 39px;
+        margin-bottom: 32px;
+
+        @media (max-width: 500px){
+                margin-bottom: 22px;
+                max-width: 271px;
+        }
+        @media (min-width: 500px) and (max-width: 1200px){
+                margin-bottom: 22px;
+        }
+    }
+    .subscrible_title span{
+        font-weight: normal;
+        font-size: 18px;
+        line-height: 29px;
+    }
+
+    .subscribe_form{
+        display: flex;
+        height: 49px;
+        justify-content: center;
+
+        @media (max-width: 500px){
+            height: 46.94px;
+        }
+    }
+
+
+    .input_email{
+        height: inherit;
+        padding: 6px 21px;
+        box-sizing: border-box;
+        background: #E1E1E1;
+        border-top-left-radius: 33px;
+        border-bottom-left-radius: 33px;
+        font-size: 14px;
+        line-height: 17px;
+        color: #222224;
+        opacity: 0.67;
+        font-family: inherit;
+        border: none;
+        width: 256px;
+
+        @media (max-width: 500px){
+            width: 75%;
+        }
+    }
+    .subscribe_button{
+        font-size: 14px;
+        line-height: 17px;
+        text-align: center;
+        color: #FFFFFF;
+        font-family: inherit;
+        background: #F16D7F;
+        border: none;
+        border-top-right-radius: 33px;
+        border-bottom-right-radius: 33px;
+        padding: 8px 16px;
+        height: inherit;
+        width: 100px;
+    }
+
+    @media (max-width: 500px){
+    .subscribe_button{
+            width: 95px;
+    } 
+    }
+}
+/* Footer */
+.footer{
+    background-color: #222224;
+}
+.footer .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 24px;
+    padding-bottom: 24px;
+    box-sizing: border-box; 
+    flex-direction: row-reverse;
+   
+    @media (max-width: 500px) {   
+            height: 143px;
+            flex-direction: column;
+            padding-top: 43px;
+            padding-bottom: 10px;
+    }
+}
+
+.social_media{
+    display: flex;
+    width: 148px;
+
+    @media (max-width: 500px) {  
+            margin-bottom: 40px;
+    }
+
+}
+.social_media > a{
+    width: 32px;
+    height: 32px;
+    color: black;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+.social_media > a:hover{
+    background: #F16D7F;
+    color: #FFFFFF;
+}
+.social_media > a:not(:last-child){
+    margin-right: 7px;
+}
+.copyright{
+    color: #FBFBFB;
+
+    @media (max-width: 500px) { 
+            align-self: center;
+    }
+}
+
+/* Catalog page*/
+
+.nav .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @media (max-width: 500px){
+        flex-direction: column;
+    }
+}
+.nav{
+    background: #F8F3F4;
+
+    
+    .nav_left{
+        font-size: 24px;
+        line-height: 29px;
+        color: #F16D7F;
+        padding-top: 60px;
+        padding-bottom: 60px;
+    
+        @media (max-width: 500px){
+            padding-top: 24px;
+            padding-bottom: 32px;
+        }
+    }
+    
+    .nav_right{
+        font-weight: 300;
+        color: #636363;
+
+        @media (max-width: 500px){
+            padding-bottom: 46px;
+        }
+    }
+    .nav_right a{
+        text-decoration: none;
+        color: #636363;
+    }
+    .nav_right a.active{
+            color: #F16D7F;
+    }
+    
+}
+
+
+// Styles for Filter block
+.filter .container{
+    display: flex;
+    padding-top: 51px;
+    padding-bottom: 64px;
+    
+    @media(max-width: 767px){
+        justify-content: space-between;
+    }
+
+    .filterLeft:hover {
+        color: #EF5B70;
+    } 
+    .filterLeft{
+        @extend .text;
+        display: flex;
+        padding-right: 320px;
+        height: 17px;
+        position: relative;
+        align-items: center;
+        
+        @media (max-width: 767px){
+            height: 25px;
+            padding-right: 61px;
+        }
+
+        .filterLeft__text{
+            padding-right: 11px;
+            
+            @media (max-width: 500px){
+                display: none;
+            }
+        }
+
+        @media (max-width: 500px){
+            .filterLeft__bars{
+                height: inherit;
+            }
+        }
+    }
+
+      // Left Filter Menu
+    .filterLeft__menu{
+        background: #FFFFFF;
+        box-shadow: 6px 4px 35px rgba(0, 0, 0, 0.21);
+        width: 360px;
+        padding: 16px 17px;
+        box-sizing: border-box;
+        overflow: auto;
+        position: absolute;
+        z-index: 1;
+        top: -12px;
+
+        @media (max-width: 500px){
+            width: 80%;
+        }
+    
+        .filter_categories{
+            padding-top: 16px;
+        }
+        
+        .filter_category_title{
+            color: #EF5B70;
+            border-left: 5px solid #F16D7F;
+            padding-left: 16px;
+            height: 37px;
+            line-height: 36px;
+            border-bottom: 1px solid #EBEBEB;
+        }
+         .filter_category_title:last-child{
+                margin-top: 18.5px;
+            }
+        .filter_category_items{
+            list-style-type: none;
+            padding: 17px 24px;
+            margin-top: initial;
+        }
+        .filter_category_items a{
+            text-decoration: none;
+            color: #6F6E6E;
+            line-height: 30px;
+        }
+    }
+    .filter_icon{
+        @extend .filterLeft;
+        color: #EF5B70;
+    }
+
+    .filterRight{
+        display: flex;
+        @extend .text;
+        color: #6F6E6E;
+        justify-content: space-between;
+        position: relative;
+        align-items: center;
+
+
+        @media (max-width: 440px) {
+            flex-direction: column;
+            align-items: flex-end;
+        }
+    }
+    .filterRight__filterParameters{
+        display: flex;
+        justify-content: space-between;
+    }
+    .filterRight__filterParameters > img{
+        padding-left: 9px;
+    }
+    .filterRight__filterParameters:not(:last-child){
+        padding-right: 28px;
+
+        @media (max-width: 440px){
+            padding-right: 0;
+            padding-bottom: 6px;
+        }
+    }
+    //  Как лучше вызывать чекбокс-фильтр: через ховер или скриптом? При ховере чекбокс-фильтр исчезает сразу при спуски курсора вниз из-за марджина и не дает отметить боксы, а с текущим скриптом за раз можно выбрать только один вариант и после клика фильтр закрывается. 
+    .sizeCheckboxFilter{
+            background: #FFFFFF;
+            box-shadow: 6px 4px 35px rgba(0, 0, 0, 0.21);
+            width: 79px;
+            padding: 9.5px;
+            box-sizing: border-box;
+            position: absolute;
+            z-index: 1;
+            margin-left: -9px;
+            margin-top: 27px;
+            
+        .checkbox{
+            line-height: 24px;
+        }
+    }
+    .sizeCheckboxFilter li{
+        list-style-type: none;
+     }
+
+     .filterRight__filterParameters:hover{
+         font-size: 14.5px;
+     }
+}
+
+
+// Styles for pages box at the bottom
+.paginator{
+    width: 284px;
+    height: 44px;
+    border: 1px solid #EBEBEB;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 19px;
+    color: #C4C4C4;
+}
+.paginator_positioning{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 48px;
+}
+.paginator a {
+    text-decoration: none;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 19px;
+    color: #C4C4C4;
+}
+.paginator a.active{
+    color: #EF5B70;
+} 
+
+
+
