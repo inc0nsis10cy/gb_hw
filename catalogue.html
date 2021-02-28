@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Online Garments Shop</title>
+    <title>Catalogue</title>
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
         integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
@@ -30,97 +30,119 @@
                 </div>
             </div>
         </header>
+
+        <!-- ПОДКЛЮЧИТЬ МЕНЮ!!! разобраться с высотой и перекрытием -->
+        <div class="menu_wrap hidden">
+            <div class="menu">
+                <img src="img/cancel_menu.svg" alt="" class="cancel_menu">
+                <div class="menu_heading text">MENU</div>
+                <div class="menu_group">
+                    <div class="menu_items_title text">MAN</div>
+                    <ul class="menu_items text">
+                        <li> <a href="#">Accessories</a> </li>
+                        <li><a href="#">Bags</a> </li>
+                        <li><a href="">Denim</a> </li>
+                        <li><a href="">T-Shirts</a> </li>
+                    </ul>
+                </div>
+                <div class="menu_group">
+                    <div class="menu_items_title text">WOMEN</div>
+                    <ul class="menu_items text">
+                        <li> <a href="#">Accessories</a> </li>
+                        <li><a href="#">Jackets & Coats</a> </li>
+                        <li><a href="">Polos</a> </li>
+                        <li><a href="">T-Shirts</a> </li>
+                        <li><a href="">Shirts</a> </li>
+                    </ul>
+                </div>
+                <div class="menu_group">
+                    <div class="menu_items_title text">KIDS</div>
+                    <ul class="menu_items text">
+                        <li> <a href="#">Accessories</a> </li>
+                        <li><a href="#">Jackets & Coats</a> </li>
+                        <li><a href="">Polos</a> </li>
+                        <li><a href="">T-Shirts</a> </li>
+                        <li><a href="">Shirts</a> </li>
+                        <li><a href="">Bags</a> </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+        <nav class="nav">
+            <div class="container">
+                <div class="nav_left text">NEW ARRIVALS </div>
+                <div class="nav_right text">
+                    <a href="index_online_shop.html">HOME</a>
+                    /
+                    <a href="#">MEN</a>
+                    /
+                    <a href="#" class="active">NEW ARRIVALS</a>
+                </div>
+            </div>
+        </nav>
+
+
+        <div class="filter">
+            <div class="container">
+                <div class="filterLeft">
+                    <div class="filterLeft__text text">FILTER</div>
+                    <img class="filterLeft__bars" src="img/catalogue/filter.svg" alt="">
+
+
+                    <!-- ПОДКЛЮЧИТЬ ФИЛЬТР -->
+                    <div class="filterLeft__menu hidden">
+                        <div class="filter_icon">
+                            <div class="filterLeft__text text">FILTER</div>
+                            <img class="filterLeft__bars" src="img/catalogue/filter_pink.svg" alt="">
+                        </div>
+                        <div class="filter_categories">
+                            <div class="filter_category_title text">CATEGORY</div>
+                            <ul class="filter_category_items text">
+                                <li><a href="">Accessories</a></li>
+                                <li><a href="">Bags</a></li>
+                                <li><a href="">Denim</a></li>
+                                <li><a href="">Hoodies & Sweatshirts</a></li>
+                                <li><a href="">Jackets & Coats</a></li>
+                                <li><a href="">Polos</a></li>
+                                <li><a href="">Shirts</a></li>
+                                <li><a href="">Shoes</a></li>
+                                <li><a href="">Sweaters & Knits</a></li>
+                                <li><a href="">T-Shirts</a></li>
+                                <li><a href="">Tanks</a></li>
+                            </ul>
+                            <div class="filter_category_title text">BRAND</div>
+                            <div class="filter_category_title text">DESIGNER</div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="filterRight">
+                    <div class="filterRight__filterParameters">
+                        <span>TRENDING NOW</span> <img src="img/catalogue/drop-down.svg" alt="">
+                    </div>
+                    <div class="filterRight__filterParameters filterParameters__size">
+                        <span>SIZE</span> <img src="img/catalogue/drop-down.svg" alt="">
+
+                        <ul class="sizeCheckboxFilter hidden">
+                            <li><label for="size" class="checkbox"><input type="checkbox"> XS</label></li>
+                            <li><label for="size" class="checkbox"><input type="checkbox">S</label></li>
+                            <li><label for="size" class="checkbox"><input type="checkbox"> M</label></li>
+                            <li><label for="size"><input type="checkbox"> L</label></li>
+                        </ul>
+                    </div>
+                    <div class="filterRight__filterParameters">
+                        <span>PRICE</span> <img src="img/catalogue/drop-down.svg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <main class="main">
-            <div class="brand_block">
-                <div class="brand_wrap">
-                    <div class="brand_block_left">
-                        <img src="img/brand_cover.png" alt="" class="brand_cover_pic">
-                    </div>
-                    <div class="brand_block_right">
-                        <div class="brand_logo">
-                            <div>THE BRAND</div>
-                            <div>OF LUXERIOUS <span>FASHION</span></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="menu_wrap brand_overlay hidden">
-                    <div class="menu">
-                        <img src="img/cancel_menu.svg" alt="" class="cancel_menu">
-                        <div class="menu_heading text">MENU</div>
-                        <div class="menu_group">
-                            <div class="menu_items_title text">MAN</div>
-                            <ul class="menu_items text">
-                                <li> <a href="#">Accessories</a> </li>
-                                <li><a href="#">Bags</a> </li>
-                                <li><a href="">Denim</a> </li>
-                                <li><a href="">T-Shirts</a> </li>
-                            </ul>
-                        </div>
-                        <div class="menu_group">
-                            <div class="menu_items_title text">WOMEN</div>
-                            <ul class="menu_items text">
-                                <li> <a href="#">Accessories</a> </li>
-                                <li><a href="#">Jackets & Coats</a> </li>
-                                <li><a href="">Polos</a> </li>
-                                <li><a href="">T-Shirts</a> </li>
-                                <li><a href="">Shirts</a> </li>
-                            </ul>
-                        </div>
-                        <div class="menu_group">
-                            <div class="menu_items_title text">KIDS</div>
-                            <ul class="menu_items text">
-                                <li> <a href="#">Accessories</a> </li>
-                                <li><a href="#">Jackets & Coats</a> </li>
-                                <li><a href="">Polos</a> </li>
-                                <li><a href="">T-Shirts</a> </li>
-                                <li><a href="">Shirts</a> </li>
-                                <li><a href="">Bags</a> </li>
-                            </ul>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-
-            <div class="offers container">
-                <div class="offer_women">
-                    <img class="offer_pic" src="img/offer_women.png" alt="women clothing">
-                    <div class="heading_offers">
-                        <div class="heading_line1">30% OFF</div>
-                        <div class="heading_line2">FOR WOMEN</div>
-                    </div>
-                </div>
-
-                <div class="offer_men">
-                    <img class="offer_pic" src="img/offer_men.png" alt="men clothing">
-                    <div class="heading_offers">
-                        <div class="heading_line1">HOT DEAL</div>
-                        <div class="heading_line2">FOR MEN</div>
-                    </div>
-                </div>
-
-                <div class="offer_kids">
-                    <img class="offer_pic" src="img/offer_kids.png" alt="kids clothing">
-                    <div class="heading_offers">
-                        <div class="heading_line1">NEW ARRIVALS</div>
-                        <div class="heading_line2">FOR KIDS</div>
-                    </div>
-                </div>
-
-                <div class="offer_accessories">
-                    <img class="offer_pic long_pic" src="img/offer_accessories.png" alt="accessories">
-                    <div class="heading_offers">
-                        <div class="heading_line1">LUXIROUS & TRENDY</div>
-                        <div class="heading_line2">ACCESORIES</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="featuredItems container">
-                <h2 class="featuredItems__heading">Featured Items</h2>
-                <div class="featuredItems__text text">Shop for items based on what we featured in this week
-                </div>
-                <div class="capsules capsules_positioning">
+            <div class="new_arrivals container">
+                <div class="capsules">
                     <div class="capsule">
                         <div class="capsule_pic_wrap">
                             <img src="img/capsule_pic1.jpg" alt="" class="capsule_pic">
@@ -137,13 +159,13 @@
                             <div class="capsule_text text">Known for her sculptural takes on traditional
                                 tailoring,
                                 Australian arbiter of cool Kym Ellery teams up with Moda Operandi.</div>
-
                             <div class="text capsule_price">$52.00</div>
                         </div>
                     </div>
+
                     <div class="capsule">
                         <div class="capsule_pic_wrap">
-                            <img src="img/capsule_pic2.jpg" alt="" class="capsule_pic">
+                            <img src="img/catalogue/catalogue_img2.jpg" alt="" class="capsule_pic">
                             <div class="capsule_pic_dark_overlay">
                                 <div class="tap_button">
                                     <img src="img/cart.svg" alt="">
@@ -156,10 +178,10 @@
                             <div class="capsule_text text">Known for her sculptural takes on traditional
                                 tailoring,
                                 Australian arbiter of cool Kym Ellery teams up with Moda Operandi.</div>
-
                             <div class="text capsule_price">$52.00</div>
                         </div>
                     </div>
+
                     <div class="capsule">
                         <div class="capsule_pic_wrap">
                             <img src="img/capsule_pic3.jpg" alt="" class="capsule_pic">
@@ -178,6 +200,7 @@
                             <div class="text capsule_price">$52.00</div>
                         </div>
                     </div>
+
                     <div class="capsule">
                         <div class="capsule_pic_wrap">
                             <img src="img/capsule_pic4.jpg" alt="" class="capsule_pic">
@@ -193,13 +216,13 @@
                             <div class="capsule_text text">Known for her sculptural takes on traditional
                                 tailoring,
                                 Australian arbiter of cool Kym Ellery teams up with Moda Operandi.</div>
-
                             <div class="text capsule_price">$52.00</div>
                         </div>
                     </div>
+
                     <div class="capsule">
                         <div class="capsule_pic_wrap">
-                            <img src="img/capsule_pic5.jpg" alt="" class="capsule_pic">
+                            <img src="img/catalogue/catalogue_img5.jpg" alt="" class="capsule_pic">
                             <div class="capsule_pic_dark_overlay">
                                 <div class="tap_button">
                                     <img src="img/cart.svg" alt="">
@@ -215,9 +238,10 @@
                             <div class="text capsule_price">$52.00</div>
                         </div>
                     </div>
+
                     <div class="capsule">
                         <div class="capsule_pic_wrap">
-                            <img src="img/capsule_pic6.jpg" alt="" class="capsule_pic">
+                            <img src="img/catalogue/catalogue_img6.jpg" alt="" class="capsule_pic">
                             <div class="capsule_pic_dark_overlay">
                                 <div class="tap_button">
                                     <img src="img/cart.svg" alt="">
@@ -225,6 +249,68 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="capsule_description">
+                            <div class="capsule_title">ELLERY X M'O CAPSULE</div>
+                            <div class="capsule_text text">Known for her sculptural takes on traditional
+                                tailoring,
+                                Australian arbiter of cool Kym Ellery teams up with Moda Operandi.</div>
+                            <div class="text capsule_price">$52.00</div>
+                        </div>
+                    </div>
+
+                    <div class="capsule">
+                        <div class="capsule_pic_wrap">
+                            <img src="img/catalogue/catalogue_img7.jpg" alt="" class="capsule_pic">
+                            <div class="capsule_pic_dark_overlay">
+                                <div class="tap_button">
+                                    <img src="img/cart.svg" alt="">
+                                    <div class="tap_button_text text">Add to Cart</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="capsule_description">
+                            <div class="capsule_title">ELLERY X M'O CAPSULE</div>
+                            <div class="capsule_text text">Known for her sculptural takes on traditional
+                                tailoring,
+                                Australian arbiter of cool Kym Ellery teams up with Moda Operandi.</div>
+
+                            <div class="text capsule_price">$52.00</div>
+                        </div>
+                    </div>
+
+                    <div class="capsule">
+                        <div class="capsule_pic_wrap">
+                            <img src="img/catalogue/catalogue_img8.jpg" alt="" class="capsule_pic">
+                            <div class="capsule_pic_dark_overlay">
+                                <div class="tap_button">
+                                    <img src="img/cart.svg" alt="">
+                                    <div class="tap_button_text text">Add to Cart</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="capsule_description">
+                            <div class="capsule_title">ELLERY X M'O CAPSULE</div>
+                            <div class="capsule_text text">Known for her sculptural takes on traditional
+                                tailoring,
+                                Australian arbiter of cool Kym Ellery teams up with Moda Operandi.</div>
+
+                            <div class="text capsule_price">$52.00</div>
+                        </div>
+                    </div>
+
+                    <div class="capsule">
+                        <div class="capsule_pic_wrap">
+                            <img src="img/catalogue/catalogue_img9.jpg" alt="" class="capsule_pic">
+                            <div class="capsule_pic_dark_overlay">
+                                <div class="tap_button">
+                                    <img src="img/cart.svg" alt="">
+                                    <div class="tap_button_text text">Add to Cart</div>
+                                </div>
+                            </div>
+                        </div>
+
                         <div class="capsule_description">
                             <div class="capsule_title">ELLERY X M'O CAPSULE</div>
                             <div class="capsule_text text">Known for her sculptural takes on traditional
@@ -235,7 +321,19 @@
                         </div>
                     </div>
                 </div>
-                <button class="browse_button">Browse All Products</button>
+
+                <div class="paginator paginator_positioning">
+                    <a href="#prev"><img src="img/catalogue/arrow_back.svg" alt=""></a>
+                    <a href="#" class="active">1</a>
+                    <a href="#">2</a>
+                    <a href="#">3</a>
+                    <a href="#">4</a>
+                    <a href="#">5</a>
+                    <a href="#">6</a>
+                    <span>&hellip;</span>
+                    <a href="#">20</a>
+                    <a href="#next"><img src="img/catalogue/arrow_forward.svg" alt=""></a>
+                </div>
             </div>
         </main>
 
@@ -316,6 +414,7 @@
         </footer>
 
 
+    </div>
     </div>
     <script src="js/script_menu.js"> </script>
 </body>
