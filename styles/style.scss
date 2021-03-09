@@ -1,5 +1,5 @@
-/* font Lato */
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap');
+@import "variables.scss";
+@import "buttons.scss";
 
 body{
     margin: 0;
@@ -10,14 +10,11 @@ body{
     margin: 0 auto;
     max-width: 1140px;  
     
-    @media (max-width: 500px) { /*TO-DO!!!!!!
-Контейнер не принимает значения медиазапроса при ширине экрана менее 500px, оставляет падинги от запроса для 1200px*/
-
+    @media (max-width: 500px) { 
         padding-left: 16px;
         padding-right: 16px;
     }
-     /* @media (max-width: 1200px) такой вариант не срабатывает, пришлось писать везде полный диапазон, как ниже{ */
-        @media (min-width: 500px) and (max-width: 1200px) {
+    @media (min-width: 500px) and (max-width: 1200px) {
         padding-left: 32px;
         padding-right: 32px;
     }
@@ -36,12 +33,12 @@ body{
     line-height: 17px;
 }
 
-.hidden{
+.hidden{ /*Для раскрывающихся меню*/
     display: none;
 }
 
 
-/* Header */
+/* Styles for Header */
 .header{
     background-color: #222222;
     height: 75px; 
@@ -55,7 +52,7 @@ body{
     }
 }
 
- .header .container{
+.header .container{
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -81,7 +78,6 @@ body{
             display: none;
         }
     }
-
     .cart_check{
         position: relative;
     }
@@ -305,7 +301,8 @@ body{
         color: #F16D7F;
     }
 }
-// Многое ломается при вложенности, приходится выносить отдельно
+
+// !!!!Многое ломается при вложенности, приходится выносить отдельно!!!!
 .offers > div{
     position: relative;
 }
@@ -326,7 +323,6 @@ body{
     padding-bottom: 0;
     min-height: 111px;
 }
-
 
 /* Стили для блока Featured Items */
 
@@ -386,7 +382,6 @@ body{
         row-gap: 18px;
     }  
 
-    
     .capsule:hover .capsule_pic_dark_overlay{
         display: flex;
     }
@@ -409,22 +404,7 @@ body{
             align-items: center;
             justify-content: center;
         }
-        .tap_button{
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            position:absolute;
-            border: 1px solid #FFFFFF;
-            padding: 10px 14px;
-        }
-        .tap_button img{
-            height: 24px;
-            margin-right: 11px;
-        }
-        .tap_button_text{
-            color: #FFFFFF;
-            font-family: inherit;
-        }
+       
     }
     /* Конец кнопки */
 
@@ -449,31 +429,18 @@ body{
     }
 }
 
-
-.browse_button{
-    font-size: 16px;
-    line-height: 19px;
-    font-weight: 400;
-    color: #F26376;
-    padding: 15px 39px;
-    display: block;
-    border: 1px solid #FF6A6A;
+//  Кнопка Browse all products
+.browseButton_positioning{
     margin-top: 48px;
-    margin-left: auto;
-    margin-right: auto;
-    background: none;
-    font-family: inherit;
-}
+    margin-bottom: 95px;
 
-.browse_button:hover{
-    background: #F16D7F;
-    color: #FFFFFF;
+    @media (min-width: 500px) and (max-width: 1200px){
+        margin-bottom: 64px;
     }
-
+}
 
 /* Styles for Advantages block */
 .advantages_block{
-    margin-top: 95px;
     background: #222224;
     padding-top: 104px;
     padding-bottom: 104px;
@@ -484,7 +451,6 @@ body{
         }
 
     @media (min-width: 500px) and (max-width: 1200px){
-            margin-top: 64px;
             padding-top: 48px;
             padding-bottom: 64px;
     }
@@ -559,7 +525,7 @@ body{
 /* Styles for Subscribe block */
 
 .subscribe_block{
-    background: url(../img/subscribe_bg.jpg) no-repeat;;
+    background: url(#{$imgPath}/subscribe_bg.jpg) no-repeat;
     background-size: cover;
 
     .subscribe{
@@ -570,20 +536,16 @@ body{
         padding-bottom: 126px;
         box-sizing: border-box;
         
-    }
-    @media (max-width: 500px){
-        .subscribe{
-        flex-direction: column;
-        padding-top: 64px;
-        padding-bottom: 140px;
-        }
-    }
-    @media (min-width: 500px) and (max-width: 1100px){
-        .subscribe{
+        @media (max-width: 500px){
             flex-direction: column;
-            min-height: 614px;
             padding-top: 64px;
-            padding-bottom: 110px;
+            padding-bottom: 140px;
+        }
+        @media (min-width: 500px) and (max-width: 1100px){
+                flex-direction: column;
+                min-height: 614px;
+                padding-top: 64px;
+                padding-bottom: 110px;
         }
     }
 
@@ -593,17 +555,13 @@ body{
         align-items: center;
         text-align: center;
         max-width: 360px;
-    }
-    @media (max-width: 500px){
-        .subscribe_left{
+
+        @media (max-width: 500px){
             padding-bottom: 48px;
             max-width: 343px;
             justify-content: center;
-            
         }
-    }
-    @media (min-width: 500px) and (max-width: 1200px){
-        .subscribe_left{
+        @media (min-width: 500px) and (max-width: 1200px){
             margin-bottom: 48px;
             flex-direction: column;
             align-items: center;
@@ -616,11 +574,10 @@ body{
         text-align: center;
         color: #222224;
         max-width: 330px;
-    }
-    @media (max-width: 500px){
-        .subscribe_text{
-                font-size: 18px;
-                line-height: 22px;
+    
+        @media (max-width: 500px){
+            font-size: 18px;
+            line-height: 22px;
         }
     }
 
@@ -641,11 +598,11 @@ body{
         margin-bottom: 32px;
 
         @media (max-width: 500px){
-                margin-bottom: 22px;
-                max-width: 271px;
+            margin-bottom: 22px;
+            max-width: 271px;
         }
         @media (min-width: 500px) and (max-width: 1200px){
-                margin-bottom: 22px;
+            margin-bottom: 22px;
         }
     }
     .subscrible_title span{
@@ -663,7 +620,6 @@ body{
             height: 46.94px;
         }
     }
-
 
     .input_email{
         height: inherit;
@@ -697,14 +653,13 @@ body{
         padding: 8px 16px;
         height: inherit;
         width: 100px;
-    }
 
-    @media (max-width: 500px){
-    .subscribe_button{
+        @media (max-width: 500px){
             width: 95px;
-    } 
+        } 
     }
 }
+
 /* Footer */
 .footer{
     background-color: #222224;
@@ -719,46 +674,48 @@ body{
     flex-direction: row-reverse;
    
     @media (max-width: 500px) {   
-            height: 143px;
-            flex-direction: column;
-            padding-top: 43px;
-            padding-bottom: 10px;
+        height: 143px;
+        flex-direction: column;
+        padding-top: 43px;
+        padding-bottom: 10px;
     }
-}
-
-.social_media{
-    display: flex;
-    width: 148px;
-
-    @media (max-width: 500px) {  
+    .social_media{
+        display: flex;
+        width: 148px;
+    
+        @media (max-width: 500px) {  
             margin-bottom: 40px;
+        }
+    
     }
-
-}
-.social_media > a{
-    width: 32px;
-    height: 32px;
-    color: black;
-    background: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-decoration: none;
-}
-.social_media > a:hover{
-    background: #F16D7F;
-    color: #FFFFFF;
-}
-.social_media > a:not(:last-child){
-    margin-right: 7px;
-}
-.copyright{
-    color: #FBFBFB;
-
-    @media (max-width: 500px) { 
+    .social_media > a{
+        width: 32px;
+        height: 32px;
+        color: black;
+        background: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+    
+        &:hover{
+            background: #F16D7F;
+            color: #FFFFFF;
+        }
+    }
+    .social_media > a:not(:last-child){
+        margin-right: 7px;
+    }
+    .copyright{
+        color: #FBFBFB;
+    
+        @media (max-width: 500px) { 
             align-self: center;
+        }
     }
 }
+
+
 
 /* Catalog page*/
 
@@ -861,7 +818,7 @@ body{
         top: -12px;
 
         @media (max-width: 500px){
-            width: 80%;
+            width: 300px;
         }
     
         .filter_categories{
@@ -904,7 +861,7 @@ body{
         align-items: center;
 
 
-        @media (max-width: 440px) {
+        @media (max-width: 374px) {
             flex-direction: column;
             align-items: flex-end;
         }
@@ -919,12 +876,11 @@ body{
     .filterRight__filterParameters:not(:last-child){
         padding-right: 28px;
 
-        @media (max-width: 440px){
+        @media (max-width: 374px){
             padding-right: 0;
             padding-bottom: 6px;
         }
     }
-    //  Как лучше вызывать чекбокс-фильтр: через ховер или скриптом? При ховере чекбокс-фильтр исчезает сразу при спуски курсора вниз из-за марджина и не дает отметить боксы, а с текущим скриптом за раз можно выбрать только один вариант и после клика фильтр закрывается. 
     .sizeCheckboxFilter{
             background: #FFFFFF;
             box-shadow: 6px 4px 35px rgba(0, 0, 0, 0.21);
@@ -949,8 +905,8 @@ body{
      }
 }
 
-
-// Styles for pages box at the bottom
+// Styles for pages box at the bottom of Catalog page
+//  Пробовала вложенность, стили перестают работать
 .paginator{
     width: 284px;
     height: 44px;
@@ -962,6 +918,11 @@ body{
     font-size: 16px;
     line-height: 19px;
     color: #C4C4C4;
+    margin-bottom: 64px;
+
+    @media (min-width: 1600px){
+        margin-bottom: 96px;
+    }
 }
 .paginator_positioning{
     margin-left: auto;
@@ -974,10 +935,195 @@ body{
     font-size: 16px;
     line-height: 19px;
     color: #C4C4C4;
-}
-.paginator a.active{
-    color: #EF5B70;
+
+    &.active{
+        color: #EF5B70
+    }
 } 
 
+// Product Page
+// Styles for Slider styles 
+.slider{
+    background: #F7F7F7;
+    min-height: 623px;
+    border-top: 1px solid #EAEAEA;
+    border-bottom: 1px solid #EAEAEA;;
+    position: relative;
 
+        @media (min-width: 1600px){
+            min-height: 776px;
+        }
 
+    .slider__pic{
+        max-width: 100%;
+        object-fit: cover;
+        margin: 85px auto;
+        display: block;
+
+        @media (min-width: 768px){
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+        @media (min-width: 1600px){
+            margin-top: 11px;
+            margin-bottom: 42px;
+        }
+    }   
+    .sliderArrowsLeft,
+    .sliderArrowsRight {
+        height: 47px;
+        width: 47px;
+        background-color: rgba(42, 42, 42, 0.15);
+        background-repeat: no-repeat;
+        background-position: center center;
+        position: absolute;
+        top: calc(50% - 47px / 2);
+        cursor: pointer;
+    }
+    .sliderArrowsLeft{
+        left: 0;
+        background-image: url(#{$imgPath}/product/arrow_left.svg);
+    
+        &:hover{
+            background-image: url(#{$imgPath}/product/arrow_left_pink.svg);
+            
+        } 
+    }
+    .sliderArrowsRight{
+        right: 0;
+        background-image: url(#{$imgPath}/product/arrow_right.svg);
+        
+        &:hover{
+            background-image: url(#{$imgPath}/product/arrow_forward_pink.svg);
+        } 
+    }
+}
+// Информация к товару с картинки
+.collectionDetails{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 65px;
+    padding-bottom: 65px;
+    border: 1px solid #EAEAEA;
+
+    &_positioning{
+        @media(min-width: 1600px){
+        margin-top: -63px;
+        background: white;
+        position: relative;
+        }
+    }
+    
+    &__heading{
+        @extend .text;
+        font-weight: 300;
+        color: #F16D7F;
+    }
+    &__divider_pink{
+        width: 63px;
+        height: 3px;
+        background-color: #EF5B70;
+        margin-top: 12px;
+        margin-bottom: 12px;
+        border: none;
+    }
+    &__title{
+        @extend .text;
+        font-weight: 300;
+        font-size: 18px;
+        line-height: 22px;
+        color: #4D4D4D;
+    }
+    &__text{
+        @extend .text;
+        font-weight: 300;
+        color: #5E5E5E;
+        margin-top: 32px;
+        margin-bottom: 32px;
+        text-align: center;
+        max-width: 326px;
+         
+        @media(min-width: 640px){
+            max-width: 555px;
+        }
+    }
+    &__price{
+        font-size: 24px;
+        line-height: 29px;
+        font-weight: 300;
+        color: #EF5B70;
+    }
+    &__divider_grey{
+        height: 1px;
+        width: 175px;
+        background-color: #EAEAEA;
+        margin-top: 32px;
+        margin-bottom: 49px;
+        border: none;
+    
+        @media (min-width: 768px){
+            width: 642px;
+            margin-top: 65px;
+            margin-bottom: 65px;
+        }
+    }
+    &__filter{
+        color: #6F6E6E;
+        font-size: 10px;
+        line-height: 12px;
+        display: flex;
+        justify-content: space-between;
+        max-width: 304px; 
+        /* !!!!! Если задаю вместо width max-width, как в видео-разборе, то у меня элементы прижимаются друг к другу, игнорируя флекс. Не могу понять почему. Но с фиксированным значением ширины фильтра width 304px при ширине экрана 320px  фильтр не помещается (ಥ﹏ಥ) */
+
+        @media(min-width: 768px){
+            width: 373px;
+            font-size: 14px;
+            line-height: 17px;
+        }
+        img{
+            margin-left: 3px;
+
+            @media(min-width: 375px){
+                margin-left: 9px;
+            }
+        }
+    }
+    &__buyButton{
+        margin-top: 48px;
+        margin-left: auto;
+        margin-right: auto;
+    }    
+}
+
+.newArrivals{
+    margin-top: 64px;
+    margin-bottom: 64px;
+
+    @media(min-width: 768px){
+        margin-top: 129px;
+        margin-bottom: 128px;
+    }
+
+    .capsule{ /*Если наименования классов для этого блока на старнице Products такие же, что и на странице каталога, что препятствует этим стилям (скрывание элементов) влиять на другую страницу? или дело в названии родительского блока?*/
+        &:first-child{
+            display: none;
+        
+        @media(min-width: 768px){
+                display: block;
+            }
+        }
+        &:last-child{
+            @media(min-width: 768px){
+                display: none;
+            }
+
+            @media(min-width: 1200px){
+                display: block;
+            }
+        }
+
+    }
+}

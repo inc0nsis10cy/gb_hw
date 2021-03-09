@@ -1,0 +1,81 @@
+// Main page browse all products button
+//  Кнопка с ховером
+.browseButton{
+    font-size: 16px;
+    line-height: 19px;
+    font-weight: 400;
+    color: #F26376;
+    padding: 15px 39px;
+    display: block;
+    border: 1px solid #FF6A6A;
+    margin-left: auto;
+    margin-right: auto;
+    background: none;
+    font-family: inherit;
+    cursor: pointer;
+    transition-duration: 0.5s;
+
+    &:hover{
+    background: #F16D7F;
+    color: #FFFFFF;
+    }
+}
+// Merch hover cart button
+.tap_button{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position:absolute;
+    border: 1px solid #FFFFFF;
+    padding: 10px 14px;
+    transition-duration: 0.5s;
+
+    img{
+    height: 24px;
+    margin-right: 11px;
+    }
+    &_text{
+    color: #FFFFFF;
+    font-family: inherit;
+    }
+}
+
+// Product page
+.buyButton{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 16px;
+    line-height: 19px;
+    font-weight: 400;
+    color: #F26376;
+    padding: 15px 24px;
+    border: 1px solid #FF6A6A;
+    background: none;
+    font-family: inherit;
+    box-sizing: border-box;
+    transition-duration: 0.5s;
+    height: 48px; 
+
+    &_hoverIcon{
+        display: none;
+    }
+
+    &:hover {
+        background: #F16D7F;
+        color: #FFFFFF;
+        cursor: pointer;
+        transition-duration: 0.5s;
+
+        .buyButton_cartIconInitial{
+            display: none;
+        }
+        .buyButton_hoverIcon{
+            display: block;
+        }
+    }
+    & img{
+        height: 24px;
+        margin-right: 23px;
+    }
+}

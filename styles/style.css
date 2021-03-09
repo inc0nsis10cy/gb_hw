@@ -1,6 +1,102 @@
 @charset "UTF-8";
-/* font Lato */
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap");
+.browseButton {
+  font-size: 16px;
+  line-height: 19px;
+  font-weight: 400;
+  color: #F26376;
+  padding: 15px 39px;
+  display: block;
+  border: 1px solid #FF6A6A;
+  margin-left: auto;
+  margin-right: auto;
+  background: none;
+  font-family: inherit;
+  cursor: pointer;
+  -webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s;
+}
+
+.browseButton:hover {
+  background: #F16D7F;
+  color: #FFFFFF;
+}
+
+.tap_button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  border: 1px solid #FFFFFF;
+  padding: 10px 14px;
+  -webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s;
+}
+
+.tap_button img {
+  height: 24px;
+  margin-right: 11px;
+}
+
+.tap_button_text {
+  color: #FFFFFF;
+  font-family: inherit;
+}
+
+.buyButton {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 16px;
+  line-height: 19px;
+  font-weight: 400;
+  color: #F26376;
+  padding: 15px 24px;
+  border: 1px solid #FF6A6A;
+  background: none;
+  font-family: inherit;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s;
+  height: 48px;
+}
+
+.buyButton_hoverIcon {
+  display: none;
+}
+
+.buyButton:hover {
+  background: #F16D7F;
+  color: #FFFFFF;
+  cursor: pointer;
+  -webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s;
+}
+
+.buyButton:hover .buyButton_cartIconInitial {
+  display: none;
+}
+
+.buyButton:hover .buyButton_hoverIcon {
+  display: block;
+}
+
+.buyButton img {
+  height: 24px;
+  margin-right: 23px;
+}
+
 body {
   margin: 0;
   font-family: Lato, sans-serif;
@@ -9,13 +105,10 @@ body {
 .container {
   margin: 0 auto;
   max-width: 1140px;
-  /* @media (max-width: 1200px) такой вариант не срабатывает, пришлось писать везде полный диапазон, как ниже{ */
 }
 
 @media (max-width: 500px) {
   .container {
-    /*TO-DO!!!!!!
-Контейнер не принимает значения медиазапроса при ширине экрана менее 500px, оставляет падинги от запроса для 1200px*/
     padding-left: 16px;
     padding-right: 16px;
   }
@@ -40,17 +133,18 @@ body {
 }
 
 /* Text related */
-.text, .filter .container .filterLeft, .filter .container .filter_icon, .filter .container .filterRight {
+.text, .filter .container .filterLeft, .filter .container .filter_icon, .filter .container .filterRight, .collectionDetails__heading, .collectionDetails__title, .collectionDetails__text {
   font-weight: 400;
   font-size: 14px;
   line-height: 17px;
 }
 
 .hidden {
+  /*Для раскрывающихся меню*/
   display: none;
 }
 
-/* Header */
+/* Styles for Header */
 .header {
   background-color: #222222;
   height: 75px;
@@ -549,30 +643,6 @@ body {
           justify-content: center;
 }
 
-.capsules .capsule_pic_wrap .tap_button {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  position: absolute;
-  border: 1px solid #FFFFFF;
-  padding: 10px 14px;
-}
-
-.capsules .capsule_pic_wrap .tap_button img {
-  height: 24px;
-  margin-right: 11px;
-}
-
-.capsules .capsule_pic_wrap .tap_button_text {
-  color: #FFFFFF;
-  font-family: inherit;
-}
-
 .capsules .capsule_description {
   padding: 24px 16px 20px;
   text-align: left;
@@ -596,29 +666,19 @@ body {
   color: #F16D7F;
 }
 
-.browse_button {
-  font-size: 16px;
-  line-height: 19px;
-  font-weight: 400;
-  color: #F26376;
-  padding: 15px 39px;
-  display: block;
-  border: 1px solid #FF6A6A;
+.browseButton_positioning {
   margin-top: 48px;
-  margin-left: auto;
-  margin-right: auto;
-  background: none;
-  font-family: inherit;
+  margin-bottom: 95px;
 }
 
-.browse_button:hover {
-  background: #F16D7F;
-  color: #FFFFFF;
+@media (min-width: 500px) and (max-width: 1200px) {
+  .browseButton_positioning {
+    margin-bottom: 64px;
+  }
 }
 
 /* Styles for Advantages block */
 .advantages_block {
-  margin-top: 95px;
   background: #222224;
   padding-top: 104px;
   padding-bottom: 104px;
@@ -633,7 +693,6 @@ body {
 
 @media (min-width: 500px) and (max-width: 1200px) {
   .advantages_block {
-    margin-top: 64px;
     padding-top: 48px;
     padding-bottom: 64px;
   }
@@ -995,7 +1054,7 @@ body {
   }
 }
 
-.social_media {
+.footer .container .social_media {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1003,12 +1062,12 @@ body {
 }
 
 @media (max-width: 500px) {
-  .social_media {
+  .footer .container .social_media {
     margin-bottom: 40px;
   }
 }
 
-.social_media > a {
+.footer .container .social_media > a {
   width: 32px;
   height: 32px;
   color: black;
@@ -1025,21 +1084,21 @@ body {
   text-decoration: none;
 }
 
-.social_media > a:hover {
+.footer .container .social_media > a:hover {
   background: #F16D7F;
   color: #FFFFFF;
 }
 
-.social_media > a:not(:last-child) {
+.footer .container .social_media > a:not(:last-child) {
   margin-right: 7px;
 }
 
-.copyright {
+.footer .container .copyright {
   color: #FBFBFB;
 }
 
 @media (max-width: 500px) {
-  .copyright {
+  .footer .container .copyright {
     -ms-flex-item-align: center;
         -ms-grid-row-align: center;
         align-self: center;
@@ -1178,7 +1237,7 @@ body {
 
 @media (max-width: 500px) {
   .filter .container .filterLeft__menu {
-    width: 80%;
+    width: 300px;
   }
 }
 
@@ -1229,7 +1288,7 @@ body {
           align-items: center;
 }
 
-@media (max-width: 440px) {
+@media (max-width: 374px) {
   .filter .container .filterRight {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -1258,7 +1317,7 @@ body {
   padding-right: 28px;
 }
 
-@media (max-width: 440px) {
+@media (max-width: 374px) {
   .filter .container .filterRight__filterParameters:not(:last-child) {
     padding-right: 0;
     padding-bottom: 6px;
@@ -1308,6 +1367,13 @@ body {
   font-size: 16px;
   line-height: 19px;
   color: #C4C4C4;
+  margin-bottom: 64px;
+}
+
+@media (min-width: 1600px) {
+  .paginator {
+    margin-bottom: 96px;
+  }
 }
 
 .paginator_positioning {
@@ -1326,5 +1392,234 @@ body {
 
 .paginator a.active {
   color: #EF5B70;
+}
+
+.slider {
+  background: #F7F7F7;
+  min-height: 623px;
+  border-top: 1px solid #EAEAEA;
+  border-bottom: 1px solid #EAEAEA;
+  position: relative;
+}
+
+@media (min-width: 1600px) {
+  .slider {
+    min-height: 776px;
+  }
+}
+
+.slider .slider__pic {
+  max-width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin: 85px auto;
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .slider .slider__pic {
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+}
+
+@media (min-width: 1600px) {
+  .slider .slider__pic {
+    margin-top: 11px;
+    margin-bottom: 42px;
+  }
+}
+
+.slider .sliderArrowsLeft,
+.slider .sliderArrowsRight {
+  height: 47px;
+  width: 47px;
+  background-color: rgba(42, 42, 42, 0.15);
+  background-repeat: no-repeat;
+  background-position: center center;
+  position: absolute;
+  top: calc(50% - 47px / 2);
+  cursor: pointer;
+}
+
+.slider .sliderArrowsLeft {
+  left: 0;
+  background-image: url(../img/product/arrow_left.svg);
+}
+
+.slider .sliderArrowsLeft:hover {
+  background-image: url(../img/product/arrow_left_pink.svg);
+}
+
+.slider .sliderArrowsRight {
+  right: 0;
+  background-image: url(../img/product/arrow_right.svg);
+}
+
+.slider .sliderArrowsRight:hover {
+  background-image: url(../img/product/arrow_forward_pink.svg);
+}
+
+.collectionDetails {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-top: 65px;
+  padding-bottom: 65px;
+  border: 1px solid #EAEAEA;
+}
+
+@media (min-width: 1600px) {
+  .collectionDetails_positioning {
+    margin-top: -63px;
+    background: white;
+    position: relative;
+  }
+}
+
+.collectionDetails__heading {
+  font-weight: 300;
+  color: #F16D7F;
+}
+
+.collectionDetails__divider_pink {
+  width: 63px;
+  height: 3px;
+  background-color: #EF5B70;
+  margin-top: 12px;
+  margin-bottom: 12px;
+  border: none;
+}
+
+.collectionDetails__title {
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 22px;
+  color: #4D4D4D;
+}
+
+.collectionDetails__text {
+  font-weight: 300;
+  color: #5E5E5E;
+  margin-top: 32px;
+  margin-bottom: 32px;
+  text-align: center;
+  max-width: 326px;
+}
+
+@media (min-width: 640px) {
+  .collectionDetails__text {
+    max-width: 555px;
+  }
+}
+
+.collectionDetails__price {
+  font-size: 24px;
+  line-height: 29px;
+  font-weight: 300;
+  color: #EF5B70;
+}
+
+.collectionDetails__divider_grey {
+  height: 1px;
+  width: 175px;
+  background-color: #EAEAEA;
+  margin-top: 32px;
+  margin-bottom: 49px;
+  border: none;
+}
+
+@media (min-width: 768px) {
+  .collectionDetails__divider_grey {
+    width: 642px;
+    margin-top: 65px;
+    margin-bottom: 65px;
+  }
+}
+
+.collectionDetails__filter {
+  color: #6F6E6E;
+  font-size: 10px;
+  line-height: 12px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  max-width: 304px;
+  /* !!!!! Если задаю вместо width max-width, как в видео-разборе, то у меня элементы прижимаются друг к другу, игнорируя флекс. Не могу понять почему. Но с фиксированным значением ширины фильтра width 304px при ширине экрана 320px  фильтр не помещается (ಥ﹏ಥ) */
+}
+
+@media (min-width: 768px) {
+  .collectionDetails__filter {
+    width: 373px;
+    font-size: 14px;
+    line-height: 17px;
+  }
+}
+
+.collectionDetails__filter img {
+  margin-left: 3px;
+}
+
+@media (min-width: 375px) {
+  .collectionDetails__filter img {
+    margin-left: 9px;
+  }
+}
+
+.collectionDetails__buyButton {
+  margin-top: 48px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.newArrivals {
+  margin-top: 64px;
+  margin-bottom: 64px;
+}
+
+@media (min-width: 768px) {
+  .newArrivals {
+    margin-top: 129px;
+    margin-bottom: 128px;
+  }
+}
+
+.newArrivals .capsule {
+  /*Если наименования классов для этого блока на старнице Products такие же, что и на странице каталога, что препятствует этим стилям (скрывание элементов) влиять на другую страницу? или дело в названии родительского блока?*/
+}
+
+.newArrivals .capsule:first-child {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .newArrivals .capsule:first-child {
+    display: block;
+  }
+}
+
+@media (min-width: 768px) {
+  .newArrivals .capsule:last-child {
+    display: none;
+  }
+}
+
+@media (min-width: 1200px) {
+  .newArrivals .capsule:last-child {
+    display: block;
+  }
 }
 /*# sourceMappingURL=style.css.map */
