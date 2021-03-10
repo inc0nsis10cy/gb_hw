@@ -94,7 +94,17 @@
 
 .buyButton img {
   height: 24px;
+  width: 26px;
   margin-right: 23px;
+}
+
+.b-checkout__button {
+  background-color: #F16D7F;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 19px;
+  color: #FFFFFF;
+  font-family: inherit;
 }
 
 body {
@@ -386,6 +396,9 @@ body {
   overflow: auto;
   z-index: 1;
   right: 0;
+  max-height: 90vh;
+  -webkit-transition-duration: 1s;
+          transition-duration: 1s;
 }
 
 @media (max-width: 500px) {
@@ -1131,7 +1144,7 @@ body {
   background: #F8F3F4;
 }
 
-.nav .nav_left {
+.nav .pageTitle {
   font-size: 24px;
   line-height: 29px;
   color: #F16D7F;
@@ -1140,7 +1153,7 @@ body {
 }
 
 @media (max-width: 500px) {
-  .nav .nav_left {
+  .nav .pageTitle {
     padding-top: 24px;
     padding-bottom: 32px;
   }
@@ -1551,6 +1564,7 @@ body {
   color: #6F6E6E;
   font-size: 10px;
   line-height: 12px;
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1563,7 +1577,7 @@ body {
 
 @media (min-width: 768px) {
   .collectionDetails__filter {
-    width: 373px;
+    max-width: 373px;
     font-size: 14px;
     line-height: 17px;
   }
@@ -1621,5 +1635,59 @@ body {
   .newArrivals .capsule:last-child {
     display: block;
   }
+}
+
+.pageTitleBlock {
+  background: #F8F3F4;
+}
+
+.pageTitleBlock .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.pageTitleBlock .pageTitle {
+  font-size: 24px;
+  line-height: 29px;
+  color: #F16D7F;
+  margin-top: 50px;
+  margin-bottom: 69px;
+}
+
+.cartContent {
+  padding-left: 9px;
+  padding-right: 8px;
+  margin-top: 39px;
+}
+
+@media (min-width: 768px) {
+  .cartContent {
+    padding-left: 16px;
+    padding-right: 18px;
+    margin-top: 59px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .cartContent {
+    padding-left: 0;
+    padding-right: 0;
+    margin-top: 96px;
+  }
+}
+
+.cartContent .b-cartProduct {
+  -webkit-filter: drop-shadow(8px 8px 21px rgba(0, 0, 0, 0.13));
+          filter: drop-shadow(8px 8px 21px rgba(0, 0, 0, 0.13));
+  max-width: 358px;
+  max-height: 188px;
+}
+
+.cartContent .b-cartProduct img {
+  max-height: 100%;
 }
 /*# sourceMappingURL=style.css.map */

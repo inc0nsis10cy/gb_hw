@@ -37,7 +37,6 @@ body{
     display: none;
 }
 
-
 /* Styles for Header */
 .header{
     background-color: #222222;
@@ -222,6 +221,10 @@ body{
     overflow: auto;
     z-index: 1;
     right: 0;
+    max-height: 90vh;
+    transition-duration: 1s;
+    
+    
     
     @media (max-width: 500px){
         width: 80%;
@@ -732,10 +735,10 @@ body{
     background: #F8F3F4;
 
     
-    .nav_left{
+    .pageTitle{
         font-size: 24px;
         line-height: 29px;
-        color: #F16D7F;
+        color: #{$pinkColor};
         padding-top: 60px;
         padding-bottom: 60px;
     
@@ -1073,13 +1076,14 @@ body{
         color: #6F6E6E;
         font-size: 10px;
         line-height: 12px;
+        width: 100%;
         display: flex;
         justify-content: space-between;
         max-width: 304px; 
         /* !!!!! Если задаю вместо width max-width, как в видео-разборе, то у меня элементы прижимаются друг к другу, игнорируя флекс. Не могу понять почему. Но с фиксированным значением ширины фильтра width 304px при ширине экрана 320px  фильтр не помещается (ಥ﹏ಥ) */
 
         @media(min-width: 768px){
-            width: 373px;
+            max-width: 373px;
             font-size: 14px;
             line-height: 17px;
         }
@@ -1126,4 +1130,49 @@ body{
         }
 
     }
+}
+
+// SHOPPING CART pages styles
+.pageTitleBlock{
+    background: #F8F3F4;
+
+    .container{
+        display: flex;
+        justify-content: center;
+    }
+
+    .pageTitle{
+    font-size: 24px;
+    line-height: 29px;
+    color: #{$pinkColor};
+    margin-top: 50px;
+    margin-bottom: 69px;
+    }
+}
+
+.cartContent{
+    padding-left: 9px;
+    padding-right: 8px;
+    margin-top: 39px;
+
+    @media (min-width: 768px){
+    padding-left: 16px;
+    padding-right: 18px;
+    margin-top: 59px;
+    }
+    @media (min-width: 1200px){
+        padding-left: 0;
+        padding-right: 0;
+        margin-top: 96px;
+        }
+    .b-cartProduct{
+        filter: drop-shadow(8px 8px 21px rgba(0, 0, 0, 0.13));
+        max-width: 358px;
+        max-height: 188px;
+
+        & img{
+            max-height: 100%
+        }
+    }
+
 }

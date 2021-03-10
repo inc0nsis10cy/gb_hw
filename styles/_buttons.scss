@@ -16,7 +16,7 @@
     transition-duration: 0.5s;
 
     &:hover{
-    background: #F16D7F;
+    background: #{$pinkColor};
     color: #FFFFFF;
     }
 }
@@ -62,7 +62,7 @@
     }
 
     &:hover {
-        background: #F16D7F;
+        background: #{$pinkColor};
         color: #FFFFFF;
         cursor: pointer;
         transition-duration: 0.5s;
@@ -76,6 +76,18 @@
     }
     & img{
         height: 24px;
+        width: 26px;
         margin-right: 23px;
     }
+}
+
+// Shopping Cart page button
+.b-checkout__button{
+    background-color: #{$pinkColor};
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 19px;
+    color: #FFFFFF;
+    font-family: inherit;
+
 }
