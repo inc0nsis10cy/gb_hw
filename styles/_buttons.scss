@@ -16,7 +16,7 @@
     transition-duration: 0.5s;
 
     &:hover{
-    background: #F16D7F;
+    background: #{$pinkColor};
     color: #FFFFFF;
     }
 }
@@ -28,7 +28,9 @@
     position:absolute;
     border: 1px solid #FFFFFF;
     padding: 10px 14px;
+    font-family: inherit;
     transition-duration: 0.5s;
+    cursor: pointer;
 
     img{
     height: 24px;
@@ -62,7 +64,7 @@
     }
 
     &:hover {
-        background: #F16D7F;
+        background: #{$pinkColor};
         color: #FFFFFF;
         cursor: pointer;
         transition-duration: 0.5s;
@@ -76,6 +78,100 @@
     }
     & img{
         height: 24px;
+        width: 26px;
         margin-right: 23px;
     }
+}
+
+.subscribe_button{
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    color: #FFFFFF;
+    font-family: inherit;
+    background: #F16D7F;
+    border: none;
+    border-top-right-radius: 33px;
+    border-bottom-right-radius: 33px;
+    padding: 8px 16px;
+    height: inherit;
+    width: 100px;
+    transition-duration: 0.3s;
+
+    @media (max-width: 500px){
+        width: 95px;
+    } 
+
+    &:hover{
+    box-shadow: 5px 6px 8px rgba(0, 0, 0, 0.2);
+    font-size: 15px;
+    transition-duration: 0.3s;
+    }
+
+}
+
+
+// Shopping Cart page buttons
+@mixin CartActionButtons{
+        padding: 9px 18px;
+        text-transform: uppercase;
+        font-family: inherit;
+        font-size: 12px;
+        line-height: 14px;
+        text-align: center;
+        color: #575757;
+        border: 1px solid #A4A4A4;
+        background: none;
+        cursor: pointer;
+        transition: all 0.4s;
+
+        &:hover{
+            transition: all 0.4s;
+            transform: scale(1.07);
+            transition-delay: 0.2s;
+        }
+        
+}
+
+.getQuoteButton{
+    font-weight: 300;
+    font-size: 11px;
+    line-height: 13px;
+    padding: 9px 14px;
+    text-transform: uppercase;
+    font-family: inherit;
+    text-align: center;
+    color: #4A4A4A;
+    border: 1px solid #A4A4A4;
+    background: none;
+    cursor: pointer;
+    transition: all 0.4s;
+
+    &:hover{
+        transition: all 0.4s;
+        transform: scale(1.07);
+        transition-delay: 0.2s;
+    }
+    
+}
+
+.b-checkout__button{
+    background-color: #{$pinkColor};
+    font-weight: 300;
+    font-size: 16px;
+    width: 273px;
+    height: 50px;
+    color: #FFFFFF;
+    font-family: inherit;
+    border: none;
+    cursor: pointer;
+    transition: all 0.4s ease-in-out;
+
+    &:hover{
+        box-shadow: 5px 6px 8px rgba(0, 0, 0, 0.2);
+        transition: all 0.4s ease-in-out;
+        transform: scale(1.03);
+    }
+    
+
 }
