@@ -30,6 +30,7 @@
     padding: 10px 14px;
     font-family: inherit;
     transition-duration: 0.5s;
+    cursor: pointer;
 
     img{
     height: 24px;
@@ -110,9 +111,6 @@
 }
 
 
-
-
-
 // Shopping Cart page buttons
 @mixin CartActionButtons{
         padding: 9px 18px;
@@ -123,6 +121,16 @@
         text-align: center;
         color: #575757;
         border: 1px solid #A4A4A4;
+        background: none;
+        cursor: pointer;
+        transition: all 0.4s;
+
+        &:hover{
+            transition: all 0.4s;
+            transform: scale(1.07);
+            transition-delay: 0.2s;
+        }
+        
 }
 
 .getQuoteButton{
@@ -135,15 +143,35 @@
     text-align: center;
     color: #4A4A4A;
     border: 1px solid #A4A4A4;
+    background: none;
+    cursor: pointer;
+    transition: all 0.4s;
+
+    &:hover{
+        transition: all 0.4s;
+        transform: scale(1.07);
+        transition-delay: 0.2s;
+    }
+    
 }
 
 .b-checkout__button{
     background-color: #{$pinkColor};
     font-weight: 300;
     font-size: 16px;
-    line-height: 19px;
+    width: 273px;
+    height: 50px;
     color: #FFFFFF;
     font-family: inherit;
     border: none;
+    cursor: pointer;
+    transition: all 0.4s ease-in-out;
+
+    &:hover{
+        box-shadow: 5px 6px 8px rgba(0, 0, 0, 0.2);
+        transition: all 0.4s ease-in-out;
+        transform: scale(1.03);
+    }
+    
 
 }

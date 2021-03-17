@@ -37,6 +37,7 @@
   font-family: inherit;
   -webkit-transition-duration: 0.5s;
           transition-duration: 0.5s;
+  cursor: pointer;
 }
 
 .tap_button img {
@@ -140,16 +141,42 @@
   text-align: center;
   color: #4A4A4A;
   border: 1px solid #A4A4A4;
+  background: none;
+  cursor: pointer;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+.getQuoteButton:hover {
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+  -webkit-transform: scale(1.07);
+          transform: scale(1.07);
+  -webkit-transition-delay: 0.2s;
+          transition-delay: 0.2s;
 }
 
 .b-checkout__button {
   background-color: #F16D7F;
   font-weight: 300;
   font-size: 16px;
-  line-height: 19px;
+  width: 273px;
+  height: 50px;
   color: #FFFFFF;
   font-family: inherit;
   border: none;
+  cursor: pointer;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+.b-checkout__button:hover {
+  -webkit-box-shadow: 5px 6px 8px rgba(0, 0, 0, 0.2);
+          box-shadow: 5px 6px 8px rgba(0, 0, 0, 0.2);
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+  -webkit-transform: scale(1.03);
+          transform: scale(1.03);
 }
 
 body {
@@ -231,6 +258,8 @@ body {
           transform: scale(1.2);
   -webkit-transition: 0.3s ease-in-out;
   transition: 0.3s ease-in-out;
+  -webkit-transition-delay: 0.2s;
+          transition-delay: 0.2s;
 }
 
 .header .container .profile_icon {
@@ -439,14 +468,6 @@ body {
   z-index: 1;
   right: 0;
   max-height: 90vh;
-  -webkit-transition-duration: 0.3s;
-          transition-duration: 0.3s;
-  -webkit-transition-property: right;
-  transition-property: right;
-  -webkit-transition-timing-function: linear;
-          transition-timing-function: linear;
-  -webkit-transition-delay: 0.5s;
-          transition-delay: 0.5s;
 }
 
 @media (max-width: 767px) {
@@ -466,10 +487,17 @@ body {
   position: absolute;
   right: 16px;
   top: 16px;
+  -webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s;
 }
 
 .menu .cancel_menu:hover {
-  height: 16px;
+  -webkit-transform: scale(1.4);
+          transform: scale(1.4);
+  -webkit-transition-delay: 0.2s;
+          transition-delay: 0.2s;
+  -webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s;
 }
 
 .menu .menu_heading {
@@ -479,6 +507,20 @@ body {
 
 .menu .menu_group {
   padding-bottom: 20px;
+}
+
+.menu .menu_group ul > li {
+  -webkit-transition-duration: 0.2s;
+          transition-duration: 0.2s;
+}
+
+.menu .menu_group ul > li:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  scroll-behavior: smooth;
+  text-indent: 5px;
+  -webkit-transition-duration: 0.1s;
+          transition-duration: 0.1s;
 }
 
 .menu .menu_items_title {
@@ -1248,10 +1290,6 @@ body {
   }
 }
 
-.filter .container .filterLeft:hover, .filter .container .filter_icon:hover {
-  color: #EF5B70;
-}
-
 .filter .container .filterLeft, .filter .container .filter_icon {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1271,20 +1309,30 @@ body {
   }
 }
 
-.filter .container .filterLeft .filterLeft__text, .filter .container .filter_icon .filterLeft__text {
+.filter .container .filterLeft__text {
   padding-right: 11px;
 }
 
+.filter .container .filterLeft__text:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
 @media (max-width: 500px) {
-  .filter .container .filterLeft .filterLeft__text, .filter .container .filter_icon .filterLeft__text {
+  .filter .container .filterLeft__text {
     display: none;
   }
 }
 
 @media (max-width: 500px) {
-  .filter .container .filterLeft .filterLeft__bars, .filter .container .filter_icon .filterLeft__bars {
+  .filter .container .filterLeft__bars {
     height: inherit;
   }
+}
+
+.filter .container .filterLeft__bars:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
 }
 
 .filter .container .filterLeft__menu {
@@ -1305,6 +1353,20 @@ body {
   .filter .container .filterLeft__menu {
     width: 300px;
   }
+}
+
+.filter .container .filterLeft__menu ul > li {
+  -webkit-transition-duration: 0.2s;
+          transition-duration: 0.2s;
+}
+
+.filter .container .filterLeft__menu ul > li:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  scroll-behavior: smooth;
+  text-indent: 11px;
+  -webkit-transition-duration: 0.2s;
+          transition-duration: 0.2s;
 }
 
 .filter .container .filterLeft__menu .filter_categories {
@@ -1625,7 +1687,6 @@ body {
       -ms-flex-pack: justify;
           justify-content: space-between;
   max-width: 304px;
-  /* !!!!! Если задаю вместо width max-width, как в видео-разборе, то у меня элементы прижимаются друг к другу, игнорируя флекс. Не могу понять почему. Но с фиксированным значением ширины фильтра width 304px при ширине экрана 320px  фильтр не помещается (ಥ﹏ಥ) */
 }
 
 @media (min-width: 768px) {
@@ -1662,10 +1723,6 @@ body {
     margin-top: 129px;
     margin-bottom: 128px;
   }
-}
-
-.newArrivals .capsule {
-  /*Если наименования классов для этого блока на старнице Products такие же, что и на странице каталога, что препятствует этим стилям (скрывание элементов) влиять на другую страницу? или дело в названии родительского блока?*/
 }
 
 .newArrivals .capsule:first-child {
@@ -1807,6 +1864,15 @@ body {
   font-size: 14px;
   line-height: 22px;
   color: #575757;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .cart .cartContent .b-cartProduct .b-cartProduct__info {
+    font-size: 22px;
+    line-height: 35px;
+    padding: 22px 31px;
+  }
 }
 
 .cart .cartContent .b-cartProduct .b-cartProduct__info_title {
@@ -1814,6 +1880,23 @@ body {
   line-height: 19px;
   color: #222222;
   margin: 0 40px 25px 0;
+  max-width: 262px;
+}
+
+@media (max-width: 374px) {
+  .cart .cartContent .b-cartProduct .b-cartProduct__info_title {
+    margin: 0 10px 16px 0;
+    font-size: 14px;
+    line-height: 17px;
+  }
+}
+
+@media (min-width: 768px) {
+  .cart .cartContent .b-cartProduct .b-cartProduct__info_title {
+    margin: 0 0 42px 0;
+    font-size: 24px;
+    line-height: 29px;
+  }
 }
 
 .cart .cartContent .b-cartProduct .b-cartProduct__info_price span {
@@ -1826,23 +1909,42 @@ body {
   text-align: center;
   margin-left: 15px;
   border: 1px solid #EAEAEA;
+  font-family: inherit;
+  font-size: inherit;
 }
 
-@media (min-width: 500px) {
+@media (min-width: 768px) {
   .cart .cartContent .b-cartProduct .b-cartProduct__info_qtyInput {
     margin-left: 25px;
+    width: 45px;
+    height: 25px;
   }
 }
 
 .cart .cartContent .b-cartProduct .b-cartProduct__deleteIcon {
   position: absolute;
   height: 11px;
+  width: 11px;
   top: 17px;
   right: 12px;
+  -webkit-transition-duration: 0.3s;
+          transition-duration: 0.3s;
+}
+
+@media (min-width: 768px) {
+  .cart .cartContent .b-cartProduct .b-cartProduct__deleteIcon {
+    height: 18px;
+    width: 18px;
+    top: 28px;
+    right: 24px;
+  }
 }
 
 .cart .cartContent .b-cartProduct .b-cartProduct__deleteIcon:hover {
-  height: 13px;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-transition-duration: 0.3s;
+          transition-duration: 0.3s;
 }
 
 .cart .actionButtons {
@@ -1875,8 +1977,21 @@ body {
   text-align: center;
   color: #575757;
   border: 1px solid #A4A4A4;
+  background: none;
+  cursor: pointer;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
   min-height: 33px;
   min-width: 148px;
+}
+
+.cart .actionButtons__clearCartButton:hover {
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+  -webkit-transform: scale(1.07);
+          transform: scale(1.07);
+  -webkit-transition-delay: 0.2s;
+          transition-delay: 0.2s;
 }
 
 @media (min-width: 768px) {
@@ -1896,9 +2011,22 @@ body {
   text-align: center;
   color: #575757;
   border: 1px solid #A4A4A4;
+  background: none;
+  cursor: pointer;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
   margin-left: 9px;
   min-height: 33px;
   min-width: 148px;
+}
+
+.cart .actionButtons__continueShoppingButton:hover {
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+  -webkit-transform: scale(1.07);
+          transform: scale(1.07);
+  -webkit-transition-delay: 0.2s;
+          transition-delay: 0.2s;
 }
 
 @media (min-width: 768px) {
@@ -1956,10 +2084,10 @@ body {
 }
 
 .cart .cartCheckout .shippingForm {
-  /* При установке курсора в поле ввода, оно сразу получает страную рамку, каждый раз разного цвета. 
+  /* При установке курсора в поле ввода, оно сразу получает 
+страную рамку, каждый раз разного цвета. 
 То же происходит и при нажатии на кнопки. 
-Как можно избавиться от нее?
-*/
+Как можно избавиться от нее? */
 }
 
 .cart .cartCheckout .shippingForm form {
@@ -2024,6 +2152,7 @@ body {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   margin-top: 48px;
+  text-align: right;
 }
 
 @media (min-width: 768px) {
@@ -2044,10 +2173,33 @@ body {
   font-size: 11px;
   line-height: 13px;
   color: #4A4A4A;
+  margin-bottom: 12px;
+  margin-right: 11px;
+}
+
+.cart .b-checkout__subtotal span {
+  margin-left: 26px;
+}
+
+.cart .b-checkout__total {
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 19px;
+  margin-bottom: 21px;
+  color: #222222;
+}
+
+.cart .b-checkout__total span {
+  font-weight: 700;
+  color: #F16D7F;
+  margin-left: 23px;
 }
 
 .cart .b-checkout__divider {
   max-width: 275px;
   background: #E2E2E2;
+  border: none;
+  margin-bottom: 17px;
+  height: 1px;
 }
 /*# sourceMappingURL=style.css.map */
